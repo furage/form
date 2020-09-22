@@ -11,6 +11,7 @@
         });
     })(jQuery);
     function main($){
+        var startFlag = false;
         var h = $("#form");
         var inputUrl = yaju1919.addInputText(h,{
             id: "inputUrl",
@@ -18,7 +19,7 @@
             width: "70%",
             change: function(s){
                 var m = s.match(/https?:\/\/[\w\/:%#\$&amp;\?\(\)~\.=\+\-]+/);
-                $("#inputUrl").css({backgroundColor:m?"white":"pink"});
+                if(startFlag) $("#inputUrl").css({backgroundColor:m?"white":"pink"});
                 return m ? m[1] : '';
             },
         });
@@ -53,5 +54,6 @@
             xhr.setRequestHeader( "content-type", "application/json" );
             xhr.send(JSON.stringify(data));
         }
+        startFlag = true;
     }
 })();
