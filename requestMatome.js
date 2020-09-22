@@ -36,7 +36,7 @@
                 text = inputText();
             if(!url) return msg.text("※スレッドURLの入力は必須です。");
             send(["◆スレッドURL",url,"◆要望",text].map(function(v,i){
-                return i % 2 ? "```" + v + "```" : v;
+                return i % 2 ? "```" + v.replace(/`/g,'\`') + "```" : v;
             }).join('\n'));
             $("<div>").appendTo($("#form").empty()).text("まとめ依頼を受け付けました。");
         });
