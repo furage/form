@@ -23,7 +23,10 @@ jQuery.noConflict();
         }).on("keypress", function(e){
             if(e.key === "Enter" && e.shiftKey) send();
         });
-        var btn = $("<button>").appendTo(h).text("投稿").on("click", send).css({
+        h.append("<br>");
+        var btn = $("<button>").appendTo(
+            $("<div>").appendTo(h).css({textAlign:"center"})
+        ).text("投稿").on("click", send).css({
             width: "50%",
             height: 50
         });
