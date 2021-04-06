@@ -7,9 +7,8 @@
     jQuery.noConflict();
     (function($) {
         $.getScript("https://furage.github.io/autoMatome/mylib/adblock.js");
-        $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js", function(){
-            $(document).on('ready', function(){ main($) });
-        });
+        $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js");
+        $(document).on('ready', function(){main($)});
     })(jQuery);
     function main($){
         var startFlag = false;
