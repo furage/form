@@ -20,9 +20,15 @@ jQuery.noConflict();
         var inputText = add("textarea", "本文", "Shift+Enterで投稿").css({
             width: "70%",
             height: 100
+        }).on("keypress", function(e){
+            if(e.key === "Enter" && e.shiftKey) send();
         });
-        $("<button>").appendTo(h).text("送信").on("click", function(e){
-            $(e).add(inputName).add(inputText).attr("disabled", true);
+        var btn = $("<button>").appendTo(h).text("投稿").on("click", send).css({
+            width: "50%",
+            height: 50
+        });
+        function send(){
+            btn.add(inputName).add(inputText).attr("disabled", true);
             $.post("https://comment.blogcms.jp/livedoor/furage/8461595/post",{
                 author: inputName.val(),
                 body: inputText.val(),
@@ -36,6 +42,6 @@ jQuery.noConflict();
             }).always(function(){
                 location.reload();
             });
-        });
+        }
     });
 })(jQuery);
