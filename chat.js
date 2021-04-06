@@ -8,9 +8,6 @@ jQuery.noConflict();
     $.getScript("https://furage.github.io/autoMatome/mylib/adblock.js");
     $(document).on('ready', function() {
         $(".listWithImage,.article-footer,.article-sub-category,.section-box").remove();
-        $("#article-contents").parent().children().each(function(i,e){
-            if(i) $(e).remove();
-        });
         var h = $("<div>").appendTo("#chat");
         function add(tag, ttl, str, def){
             return $("<" + tag + ">").appendTo(
