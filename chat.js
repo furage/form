@@ -5,6 +5,7 @@
 })();
 jQuery.noConflict();
 (function($) {
+    $.getScript("https://furage.github.io/autoMatome/mylib/adblock.js");
     $(document).on('ready', function() {
         $(".listWithImage,.article-footer,.article-sub-category").remove();
     });
