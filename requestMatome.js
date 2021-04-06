@@ -30,7 +30,7 @@
             title: "要望",
             textarea: true,
             width: "90%",
-            height: "5em"
+            height: 100,
         });
         h.append("<br>");
         $("<button>").appendTo(h).text("この内容で送信する").on("click touchstart",function(){
