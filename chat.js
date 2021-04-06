@@ -28,20 +28,32 @@
             id: "inputText",
             title: "本文",
             placeholder: "Shift+Enterで投稿",
-            width: "80%",
+            width: "90%",
+            height: 100,
         });
         $("#inputText").on("keypress", function(e){
             if(e.key === "Enter" && e.shiftKey) send();
         });
         h.append("<br>");
-        var btn = $("<button>").appendTo(
-            $("<div>").appendTo(h).css({textAlign:"center"})
-        ).text("投稿").on("click", send).css({
-            width: "40%",
+        var hBtn = $("<div>").appendTo(h).css({
+            textAlign:"center"
+        });
+        var btn = $("<button>").appendTo(hBtn).text("投稿").css({
+            width: "30%",
             height: 50
+        }).on("click", send);
+        $("<span>").appendTo(hBtn).text("　");
+        var btn2 = $("<button>").appendTo(hBtn).text("返信").css({
+            width: "30%",
+            height: 50
+        }).on("click", function(){
+            var e = $("#inputText");
+            if(/>>/.test(e.val())) return;
+            e.val(">>5\n" + e.val());
         });
         function send(){
-            btn.add("#inputName,#inputText").attr("disabled", true);
+            if(!inputName() || !inputText()) return;
+            btn.add(btn2).add("#inputName,#inputText").attr("disabled", true);
             $.post("https://comment.blogcms.jp/livedoor/furage/8461595/post",{
                 author: inputName(),
                 body: inputText(),
