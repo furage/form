@@ -36,7 +36,13 @@
             height: "100",
         });
         h.append("<br>");
-        $("<button>").appendTo(h).text("この内容で送信する").on("click touchstart",function(){
+        var hBtn = $("<div>").appendTo(h).css({
+            textAlign:"center"
+        });
+        $("<button>").appendTo(hBtn).text("送信").css({
+            width: "30%",
+            height: 50
+        }).on("click touchstart",function(){
             var url = inputUrl(),
                 text = inputText();
             if(!url) return msg.text("※スレッドURLの入力は必須です。");
