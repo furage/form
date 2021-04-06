@@ -18,7 +18,10 @@ jQuery.noConflict();
         }).val(def);
     }
     var inputName = add("input", "名前", "きょーた", $("#comment-form-author").val() || $("#author").val());
-    var inputText = add("textarea", "本文", "Shift+Enterで投稿");
+    var inputText = add("textarea", "本文", "Shift+Enterで投稿").css({
+        width: "70%",
+        height: 300
+    });
     $("<button>").appendTo(h).text("送信").on("click", function(e){
         $(e).add(inputName).add(inputText).attr("disabled", true);
         $.post("https://comment.blogcms.jp/livedoor/furage/8461595/post",{
