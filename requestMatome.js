@@ -6,9 +6,13 @@
     })();
     jQuery.noConflict();
     (function($) {
+        var cnt = 0;
+        function f(){
+            if(cnt++ === 1) main($);
+        }
         $.getScript("https://furage.github.io/autoMatome/mylib/adblock.js");
-        $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js");
-        $(document).on('ready', function(){main($)});
+        $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js", f);
+        $(document).on('ready', f);
     })(jQuery);
     function main($){
         var startFlag = false;
@@ -29,7 +33,7 @@
             title: "要望",
             textarea: true,
             width: "90%",
-            height: 100,
+            height: "100",
         });
         h.append("<br>");
         $("<button>").appendTo(h).text("この内容で送信する").on("click touchstart",function(){
