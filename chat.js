@@ -6,16 +6,20 @@
     })();
     jQuery.noConflict();
     (function($) {
+        var cnt = 0;
+        function f(){
+            if(cnt++ === 1) main($);
+        }
         $.getScript("https://furage.github.io/autoMatome/mylib/adblock.js");
-        $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js");
-        $(document).on('ready', function(){main($)});
+        $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js", f);
+        $(document).on('ready', f);
     })(jQuery);
     function main($){
         $(".listWithImage,.article-footer,.article-sub-category").remove();
         $("#article-contents").parent().children().each(function(i,e){
             if(i) $(e).remove();
         });
-        var h = $("<div>").appendTo("#chat");
+        var h = $("<div>").appendTo("#form");
         var inputName = yaju1919.addInputText(h,{
             id: "inputName",
             title: "名前",
@@ -28,7 +32,7 @@
             title: "本文",
             placeholder: "Shift+Enterで投稿",
             width: "90%",
-            height: 100,
+            height: "100",
         });
         $("#inputText").on("keypress", function(e){
             if(e.key === "Enter" && e.shiftKey) send();
