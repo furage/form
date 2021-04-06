@@ -18,7 +18,7 @@ jQuery.noConflict();
         }
         var inputName = add("input", "名前", "きょーた", $("#comment-form-author").val() || $("#author").val());
         var inputText = add("textarea", "本文", "Shift+Enterで投稿").css({
-            width: "70%",
+            width: "80%",
             height: 100
         }).on("keypress", function(e){
             if(e.key === "Enter" && e.shiftKey) send();
@@ -27,7 +27,7 @@ jQuery.noConflict();
         var btn = $("<button>").appendTo(
             $("<div>").appendTo(h).css({textAlign:"center"})
         ).text("投稿").on("click", send).css({
-            width: "50%",
+            width: "40%",
             height: 50
         });
         function send(){
