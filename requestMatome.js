@@ -32,7 +32,7 @@
         var inputText = yaju1919.addInputText(h,{
             title: "要望",
             textarea: true,
-            width: "90%",
+            width: "70%",
             height: "100",
         });
         h.append("<br>");
@@ -40,7 +40,7 @@
             textAlign:"center"
         });
         $("<button>").appendTo(hBtn).text("送信").css({
-            width: "30%",
+            width: 100,
             height: 50
         }).on("click touchstart",function(){
             var url = inputUrl(),
