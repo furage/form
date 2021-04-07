@@ -56,7 +56,6 @@
             },
         });
         h.append("<br>");
-        $("<div>").appendTo(h).text("申請フォーム");
         var inputText = yaju1919.addInputText(h,{
             title: "本文",
             textarea: true,
