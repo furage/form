@@ -16,6 +16,11 @@
     })(jQuery);
     function main($){
         var startFlag = false;
+        yaju1919.addInputText("#rss",{
+            title: "弊サイトのRSS",
+            value: "https://kyota.blog.jp/index.rdf",
+            readonly: true
+        });
         var h = $("#form");
         var inputURL = yaju1919.addInputText(h,{
             id: "inputURL",
