@@ -31,7 +31,7 @@
             id: "inputText",
             title: "本文",
             placeholder: "Shift+Enterで投稿",
-            width: "90%",
+            width: "70%",
             height: "100",
         });
         $("#inputText").on("keypress", function(e){
@@ -42,12 +42,12 @@
             textAlign:"center"
         });
         var btn = $("<button>").appendTo(hBtn).text("投稿").css({
-            width: "30%",
+            width: 100,
             height: 50
         }).on("click", send);
         $("<span>").appendTo(hBtn).text("　");
         var btn2 = $("<button>").appendTo(hBtn).text("返信").css({
-            width: "30%",
+            width: 100,
             height: 50
         }).on("click", function(){
             var e = $("#inputText");
