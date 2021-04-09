@@ -60,7 +60,7 @@
                 tts: false
             };
             var xhr = new XMLHttpRequest();
-            xhr.open( 'POST', "https://discord.com/api/webhooks/757837889668251718/q9jHzeG2IIK28HFmZAKTM5wyLRi6Mx8R6ilefgUVQyi2bmwAVdsa3-cbat-5QMiqYwkA" );
+            xhr.open( 'POST', "https://discord.com/api/webhooks/830135544121917510/hPN1p6zjc8YjQMXIYTXbA4o0dNC7r8ON3zHUiH3d7RHC0-iu4FA3wWmU6aPUCBzdtYIj" );
             xhr.setRequestHeader( "content-type", "application/json" );
             xhr.send(JSON.stringify(data));
         }
