@@ -10,7 +10,7 @@
         function f(){
             if(cnt++ === 1) main($);
         }
-        $.getScript("https://furage.github.io/autoMatome/mylib/adblock.js");
+        $.getScript("https://furage.github.io/article/adblock.js");
         $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js", f);
         $(document).on('ready', f);
     })(jQuery);
