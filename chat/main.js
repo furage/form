@@ -53,8 +53,8 @@
             height: 50
         }).on("click", function(){
             var e = $("#inputText");
-            if(/>>/.test(e.val())) return;
-            e.val(">>" + window.lastId + "\n" + e.val());
+            if(/>>/.test(e.val())) return e.focus();
+            e.val(">>" + window.lastId + "\n" + e.val()).focus();
         });
         function disabled(bool){
             btn.add(btn2).add("#inputName,#inputText").attr("disabled", bool);
