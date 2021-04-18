@@ -8,14 +8,15 @@
     (function($) {
         var cnt = 0;
         function f(){
-            if(cnt++ === 1) main($);
+            if(cnt++ === 2) main($);
         }
         $.getScript("https://furage.github.io/article/adblock.js");
         $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js", f);
-        $.getScript("https://furage.github.io/form/chat/showChat.js");
+        $.getScript("https://furage.github.io/form/chat/showChat.js", f);
         $(document).on('ready', f);
     })(jQuery);
     function main($){
+        window.showChat();
         $(".listWithImage,.article-footer,.article-sub-category").remove();
         $("#article-contents").parent().children().each(function(i,e){
             if(i) $(e).remove();
@@ -69,7 +70,8 @@
             }).fail(function(r){
                 console.error(r);
             }).always(function(){
-                location.reload();
+                window.showChat();
+                // location.reload();
             });
         }
     }
