@@ -67,7 +67,7 @@
                 cookie: "on"
             }).always(function(){
                 disabled(false);
-                $("#inputText").val('');
+                $("#inputText").val('').focus();
             });
         }
     }
