@@ -25,7 +25,7 @@
                         id = Number(elm.text().slice(0,-1)),
                         name = trim(elm.next().text()),
                         text = trim($(e).find(".comment-body").text()),
-                        time = new Date($(e).find("time").text().replace(/[年月日]/g,'/'));
+                        time = new Date($(e).find("time").text().replace(/[年月日]/g,'/')).getTime();
                     while(times.indexOf(time) !== -1) time++;
                     times.push(time);
                     list.push([ id, name, text, time ]);
@@ -76,8 +76,9 @@
             });
             lastTime = nowTime;
         }
-        function purseTime(d){
-            var s = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+        function purseTime(time){
+            var d = new Date(time),
+                s = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
             return '（' + s + '）';
         }
     })(jQuery);
