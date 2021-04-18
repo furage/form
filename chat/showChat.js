@@ -78,13 +78,7 @@
         }
         function purseTime(time){
             var d = new Date(time),
-                hm = [
-                    d.getHours(),
-                    d.getMinutes()
-                ].map(function(v){
-                    return ('0' + v).slice(-2);
-                }),
-                s = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + hm[0] + ':' + hm[1];
+                s = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2);
             return '（' + s + '）';
         }
     })(jQuery);
