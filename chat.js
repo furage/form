@@ -56,9 +56,12 @@
             if(/>>/.test(e.val())) return;
             e.val(">>5\n" + e.val());
         });
+        function disabled(bool){
+            btn.add(btn2).add("#inputName,#inputText").attr("disabled", bool);
+        }
         function send(){
             if(!inputName() || !inputText()) return;
-            btn.add(btn2).add("#inputName,#inputText").attr("disabled", true);
+            disabled(true);
             $.post("https://comment.blogcms.jp/livedoor/furage/8461595/post",{
                 author: inputName(),
                 body: inputText(),
@@ -71,6 +74,8 @@
                 console.error(r);
             }).always(function(){
                 window.showChat();
+                $("#inputText").val('');
+                disabled(false);
                 // location.reload();
             });
         }
