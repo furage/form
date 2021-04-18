@@ -61,6 +61,7 @@
         function drawDOM(list){
             var nowTime = list[0][3];
             if(nowTime <= lastTime) return;
+            window.lastId = list[0][0];
             list.filter(function(arr){
                 return arr[3] > lastTime;
             }).reverse().forEach(function(arr){
