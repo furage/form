@@ -60,9 +60,10 @@
             lastTime = 0;
         function drawDOM(list){
             var nowTime = list[0][3];
+            console.log(nowTime, lastTime, list);
             if(nowTime <= lastTime) return;
             list.filter(function(arr){
-                return arr[3] <= lastTime;
+                return arr[3] > lastTime;
             }).reverse().forEach(function(arr){
                 var id = arr[0],
                     name = arr[1],
