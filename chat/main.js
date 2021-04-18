@@ -54,7 +54,7 @@
         }).on("click", function(){
             var e = $("#inputText");
             if(/>>/.test(e.val())) return;
-            e.val(">>5\n" + e.val());
+            e.val(">>" + window.lastId + "\n" + e.val());
         });
         function disabled(bool){
             btn.add(btn2).add("#inputName,#inputText").attr("disabled", bool);
