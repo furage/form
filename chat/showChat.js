@@ -60,7 +60,6 @@
             lastTime = 0;
         function drawDOM(list){
             var nowTime = list[0][3];
-            console.log(nowTime, lastTime, list);
             if(nowTime <= lastTime) return;
             list.filter(function(arr){
                 return arr[3] > lastTime;
@@ -79,7 +78,13 @@
         }
         function purseTime(time){
             var d = new Date(time),
-                s = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes();
+                hm = [
+                    d.getHours(),
+                    d.getMinutes()
+                ].map(function(v){
+                    return ('0' + v).slice(-2);
+                }),
+                s = (d.getMonth() + 1) + '/' + d.getDate() + ' ' + hm[0] + ':' + hm[1];
             return '（' + s + '）';
         }
     })(jQuery);
