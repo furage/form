@@ -15,6 +15,7 @@
         }
         getCSS("https://furage.github.io/form/chat/res.css");
         window.showChat = function(){
+            if(!document.hasFocus()) return;
             $.get("https://kyota.blog.jp/lite/archives/8461595/comments/1017765/").done(function(body){
                 var list = [],
                     m = body.match(/<aside id="comment-v2"(.|\n)+?<\/aside>/);
