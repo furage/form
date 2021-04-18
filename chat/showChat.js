@@ -19,12 +19,15 @@
                 var list = [],
                     m = body.match(/<aside id="comment-v2"(.|\n)+?<\/aside>/);
                 if(!m) throw "aside";
+                var times = [];
                 $(replaceStr(m[0], replaceHTML)).find(".comment-list").each(function(i,e){
                     var elm = $(e).find(".comment-id"),
                         id = Number(elm.text().slice(0,-1)),
                         name = trim(elm.next().text()),
                         text = trim($(e).find(".comment-body").text()),
                         time = new Date($(e).find("time").text().replace(/[年月日]/g,'/'));
+                    while(times.indexOf(time) !== -1) time++;
+                    times.push(time);
                     list.push([ id, name, text, time ]);
                 });
                 drawDOM(list.sort(function(e1,e2){
