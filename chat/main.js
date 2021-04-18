@@ -21,7 +21,7 @@
         $("#article-contents").parent().children().each(function(i,e){
             if(i) $(e).remove();
         });
-        $("#comments,.comment-v2").();
+        $("#comments,.comment-v2").hide();
         var h = $("<div>").appendTo("#form");
         var inputName = yaju1919.addInputText(h,{
             id: "inputName",
