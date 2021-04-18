@@ -12,6 +12,7 @@
         }
         $.getScript("https://furage.github.io/article/adblock.js");
         $.getScript("https://yaju1919.github.io/lib/lib/yaju1919.js", f);
+        $.getScript("https://furage.github.io/form/chat/showChat.js");
         $(document).on('ready', f);
     })(jQuery);
     function main($){
