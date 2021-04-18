@@ -28,7 +28,7 @@
                     list.push([ id, name, text, time ]);
                 });
                 drawDOM(list.sort(function(e1,e2){
-                    return e1.id < e2.id ? 1 : e1.id > e2.id ? -1 : 0;
+                    return e1[0] < e2[0] ? 1 : e1[0] > e2[0] ? -1 : 0;
                 }));
             });
         };
