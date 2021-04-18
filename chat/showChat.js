@@ -61,8 +61,8 @@
                       text = arr[2],
                       time = arr[3];
                 const h = $("<div>").appendTo(hChat);
-                $("<span>").appendTo(h).text(id + '.').addClass("id");
-                $("<span>").appendTo(h).text(name).addClass("name");
+                $("<span>").appendTo(h).text(id + '．').addClass("id");
+                $("<span>").appendTo(h).text(name + '：').addClass("name");
                 $("<span>").appendTo(h).text(text).addClass("text");
                 $("<span>").appendTo(h).text('(' + time + ')').addClass("time");
             });
