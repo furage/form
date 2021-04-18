@@ -34,7 +34,7 @@
             id: "inputText",
             title: "本文",
             placeholder: "Enterで送信",
-            width: "90%",
+            width: "70%",
             hankaku: false
         });
         $("#inputText").on("keypress", function(e){
@@ -55,7 +55,7 @@
         }).on("click", function(){
             var e = $("#inputText");
             if(/>>/.test(e.val())) return e.focus();
-            e.val(">>" + window.lastId + "\n" + e.val()).focus();
+            e.val(">>" + window.lastId + " " + e.val()).focus();
         });
         function disabled(bool){
             btn.add(btn2).add("#inputName,#inputText").attr("disabled", bool);
