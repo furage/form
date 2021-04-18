@@ -58,6 +58,7 @@
         }
         var hChat = $("#chat"),
             lastTime = 0;
+        window.lastId = 0;
         function drawDOM(list){
             var nowTime = list[0][3];
             if(nowTime <= lastTime) return;
