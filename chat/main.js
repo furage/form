@@ -66,8 +66,8 @@
                 rating_icon: "star",
                 cookie: "on"
             }).always(function(){
-                $("#inputText").val('');
                 disabled(false);
+                $("#inputText").val('');
             });
         }
     }
