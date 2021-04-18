@@ -26,13 +26,15 @@
             id: "inputName",
             title: "名前",
             placeholder: "きょーた",
-            value: $("#comment-form-author").val() || $("#author").val()
+            value: $("#comment-form-author").val() || $("#author").val(),
+            hankaku: false
         });
         var inputText = yaju1919.addInputText(h,{
             id: "inputText",
             title: "本文",
             placeholder: "Enterで送信",
-            width: "90%"
+            width: "90%",
+            hankaku: false
         });
         $("#inputText").on("keypress", function(e){
             if(e.key === "Enter") send();
