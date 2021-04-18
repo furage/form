@@ -16,7 +16,7 @@
         $(document).on('ready', f);
     })(jQuery);
     function main($){
-        window.showChat();
+        setInterval(window.showChat, 500);
         $(".listWithImage,.article-footer,.article-sub-category").remove();
         $("#article-contents").parent().children().each(function(i,e){
             if(i) $(e).remove();
@@ -73,7 +73,7 @@
             }).fail(function(r){
                 console.error(r);
             }).always(function(){
-                window.showChat();
+                // window.showChat();
                 $("#inputText").val('');
                 disabled(false);
                 // location.reload();
