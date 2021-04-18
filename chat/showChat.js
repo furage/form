@@ -23,7 +23,7 @@
                     const elm = $(e).find(".comment-id"),
                           id = Number(elm.text().slice(0,-1)),
                           name = trim(elm.next().text()),
-                          time = $(e).find("time").text(),
+                          time = $(e).find("time").text().slice(-5),
                           text = trim($(e).find(".comment-body").text());
                     list.push([ id, name, text, time ]);
                 });
@@ -64,7 +64,7 @@
                 $("<span>").appendTo(h).text(id + '．').addClass("id");
                 $("<span>").appendTo(h).text(name + '：').addClass("name");
                 $("<span>").appendTo(h).text(text).addClass("text");
-                $("<span>").appendTo(h).text('(' + time + ')').addClass("time");
+                $("<span>").appendTo(h).text(' (' + time + ')').addClass("time");
             });
         }
     })(jQuery);
