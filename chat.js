@@ -16,7 +16,7 @@
         $(document).on('ready', f);
     })(jQuery);
     function main($){
-        setInterval(window.showChat, 500);
+        setInterval(window.showChat, 1000);
         $(".listWithImage,.article-footer,.article-sub-category").remove();
         $("#article-contents").parent().children().each(function(i,e){
             if(i) $(e).remove();
@@ -29,15 +29,12 @@
             value: $("#comment-form-author").val() || $("#author").val(),
         });
         var inputText = yaju1919.addInputText(h,{
-            textarea: true,
             id: "inputText",
             title: "本文",
-            placeholder: "Shift+Enterで投稿",
-            width: "70%",
-            height: "100",
+            placeholder: "Enterで送信",
         });
         $("#inputText").on("keypress", function(e){
-            if(e.key === "Enter" && e.shiftKey) send();
+            if(e.key === "Enter") send();
         });
         h.append("<br>");
         var hBtn = $("<div>").appendTo(h).css({
@@ -68,15 +65,9 @@
                 rating: "",
                 rating_icon: "star",
                 cookie: "on"
-            }).done(function(r){
-                console.log(r);
-            }).fail(function(r){
-                console.error(r);
             }).always(function(){
-                // window.showChat();
                 $("#inputText").val('');
                 disabled(false);
-                // location.reload();
             });
         }
     }
