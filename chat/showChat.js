@@ -6,6 +6,14 @@
     })();
     jQuery.noConflict();
     (function($) {
+        function getCSS(src){
+            $('<link>').attr({
+                type: 'text/css',
+                rel: 'stylesheet',
+                href: src
+            }).appendTo('head');
+        }
+        getCSS("https://furage.github.io/form/chat/res.css");
         window.showChat = function(){
             $.get("https://kyota.blog.jp/lite/archives/8461595/comments/1017765/").done(function(body){
                 const list = [],
@@ -17,7 +25,7 @@
                           name = trim(elm.next().text()),
                           time = $(e).find("time").text(),
                           text = trim($(e).find(".comment-body").text());
-                    list.push({ id, name, text, time });
+                    list.push([ id, name, text, time ]);
                 });
                 drawDOM(list.sort(function(e1,e2){
                     return e1.id < e2.id ? 1 : e1.id > e2.id ? -1 : 0;
@@ -46,17 +54,17 @@
             return str.replace(/^\s+/, '').replace(/\s+$/, '');
         }
         function drawDOM(list){
-            const h = $("#chat").empty();
-            list.forEach(function(obj){
-                $("<div>").appendTo(h).text(Object.keys(obj).map(function(v,i){
-                    const a = obj[v];
-                    switch(i){
-                        case 0: return a + '.';
-                        case 1: return a + '：';
-                        case 2: return a;
-                        case 3: return '(' + a + ')';
-                    }
-                }).join(' '));
+            const hChat = $("#chat").empty();
+            list.forEach(function(arr){
+                const id = arr[0],
+                      name = arr[1],
+                      text = arr[2],
+                      time = arr[3];
+                const h = $("<div>").appendTo(hChat);
+                $("<span>").appendTo(h).text(id + '.').addClass("id");
+                $("<span>").appendTo(h).text(name).addClass("name");
+                $("<span>").appendTo(h).text(text).addClass("text");
+                $("<span>").appendTo(h).text('(' + time + ')').addClass("time");
             });
         }
     })(jQuery);
