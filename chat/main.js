@@ -27,6 +27,7 @@
             id: "inputName",
             title: "名前",
             placeholder: "きょーた",
+            width: "0%",
             value: $("#comment-form-author").val() || $("#author").val(),
             hankaku: false
         });
