@@ -30,20 +30,22 @@
                 var m = s.match(/https?:\/\/[\w\/:%#\$&amp;\?\(\)~\.=\+\-]+/);
                 if(startFlag) $("#inputUrl").css({backgroundColor:m?"white":"pink"});
                 return m ? m[1] : '';
-            },
+            }
         });
         var inputName = yaju1919.addInputText(h,{
             id: "inputName",
             title: "ブログ名",
+            width: "70%"
         });
         var inputMail = yaju1919.addInputText(h,{
             id: "inputMail",
             title: "メールアドレス",
+            width: "70%",
             change: function(s){
                 var m = s.match(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/);
                 if(startFlag) $("#inputUrl").css({backgroundColor:m?"white":"pink"});
                 return m ? m[1] : '';
-            },
+            }
         });
         var inputRSS = yaju1919.addInputText(h,{
             id: "inputRSS",
@@ -53,7 +55,7 @@
                 var m = s.match(/https?:\/\/[\w\/:%#\$&amp;\?\(\)~\.=\+\-]+/);
                 if(startFlag) $("#inputUrl").css({backgroundColor:m?"white":"pink"});
                 return m ? m[1] : '';
-            },
+            }
         });
         h.append("<br>");
         var inputText = yaju1919.addInputText(h,{
