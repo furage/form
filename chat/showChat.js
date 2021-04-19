@@ -26,7 +26,7 @@
                         id = Number(elm.text().slice(0,-1)),
                         name = trim(elm.next().text()),
                         text = trim($(e).find(".comment-body").text()),
-                        time = new Date($(e).find("time").text().replace(/[年月日]/g,'/')).getTime();
+                        time = new Date($(e).find("time").text().replace(/年|月/g,'/').replace(/日/,'')).getTime();
                     while(times.indexOf(time) !== -1) time++;
                     times.push(time);
                     list.push([ id, name, text, time ]);
