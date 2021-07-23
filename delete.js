@@ -29,7 +29,7 @@
         });
         h.append("<br>");
         var inputText = yaju1919.addInputText(h,{
-            title: "削除申請の理由",
+            title: "削除依頼の理由",
             textarea: true,
             width: "70%",
             height: "100",
