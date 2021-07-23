@@ -56,7 +56,7 @@
             var data = {
                 "username": '',
                 "avatar_url": '',
-                content: "<@&757839033748422668>\n" + content,
+                content: "@everyone\n" + content,
                 tts: false
             };
             var xhr = new XMLHttpRequest();
